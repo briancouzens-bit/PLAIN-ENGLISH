@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Translate complex cyber, cryptography, governance, resilience, PQC, quantum and technology terms into plain English for leaders.">
+  <title>Plain English Translator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Board-ready language</p>
+        <h1>Plain English Translator</h1>
+        <p class="lede">Cyber, cryptography, quantum, governance, resilience and delivery terms without the fog.</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <span class="theme-icon" aria-hidden="true">A</span>
+        <span id="themeLabel">Dark</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="translator-panel" aria-label="Translator search">
+        <div class="search-row">
+          <label class="search-label" for="searchInput">Translate a term</label>
+          <div class="search-box">
+            <input id="searchInput" type="search" autocomplete="off" spellcheck="false" placeholder="Try Quantum Risk, mTLS, identity proofing, model drift..." aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false">
+            <button class="clear-search" id="clearSearch" type="button" aria-label="Clear search" title="Clear search">x</button>
+            <div class="suggestions" id="suggestions" role="listbox" aria-label="Search suggestions"></div>
+          </div>
+        </div>
+
+        <div class="category-bar" aria-label="Category filters">
+          <button class="category-chip active" type="button" data-category="all" aria-pressed="true">All</button>
+          <div id="categoryFilters" class="category-filters"></div>
+        </div>
+      </section>
+
+      <section class="status-row" aria-live="polite">
+        <div>
+          <strong id="resultCount">Loading terms...</strong>
+          <span id="activeContext">Preparing translator</span>
+        </div>
+        <button class="clear-filters" id="clearFilters" type="button">Clear filters</button>
+      </section>
+
+      <section id="results" class="results" aria-label="Translation results"></section>
+      <div class="load-more-wrap">
+        <button class="load-more" id="loadMore" type="button">Show more</button>
+      </div>
+    </main>
+  </div>
+
+  <template id="resultTemplate">
+    <article class="result-card">
+      <div class="card-head">
+        <div>
+          <p class="category-label"></p>
+          <h2></h2>
+        </div>
+        <span class="match-label"></span>
+      </div>
+      <div class="translation-block plain-block">
+        <h3>Plain English</h3>
+        <p class="plain"></p>
+      </div>
+      <div class="detail-grid">
+        <div class="translation-block">
+          <h3>Technical Definition</h3>
+          <p class="technical"></p>
+        </div>
+        <div class="translation-block">
+          <h3>Why It Matters</h3>
+          <p class="matters"></p>
+        </div>
+      </div>
+      <div class="translation-block example-block">
+        <h3>Real World Example</h3>
+        <p class="example"></p>
+      </div>
+      <div class="related-wrap">
+        <h3>Related Terms</h3>
+        <div class="related-list"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
